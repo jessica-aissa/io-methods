@@ -1,0 +1,36 @@
+
+.nav {
+	width: 17%;
+	padding: 1.5vw 1.0vw;
+	
+    background-color: #EEE;
+}
+
+#nav_left {
+	border-right: 3px solid #CCC;
+	padding-left: 1.5vw;
+}
+
+#nav_right {
+	border-left: 3px solid #CCC;
+	padding-right: 1.5vw;
+}
+
+.nav_block_title {
+	border-bottom: 2px solid #666;
+	margin-bottom: 0.5vw;
+}
+
+.nav_block_content {
+	margin-bottom: 1vw;
+	
+	font-size: 14px;
+}
+
+.nav_timeLapse_time {
+	color: #069;
+}
+
+.nav_method_button {
+
+}

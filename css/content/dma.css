@@ -1,0 +1,17 @@
+
+#content_dma {
+
+}
+
+#content_dma_header {
+	background-color: #FCC;
+}
+
+#content_dma_content {
+	padding: 0.5vw;
+	
+	color: #336;
+	font-size: 1.1em;
+	
+	background-color: #FFF;
+}

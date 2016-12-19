@@ -1,0 +1,54 @@
+
+#content_printer {
+
+}
+
+#content_printer_header {
+	background-color: #BCA;
+}
+
+#content_printer_content {
+	text-align: left;
+	padding: 12px;
+}
+
+#content_printer_page {
+	height: 60px;
+	border: 1px solid #666;
+	padding: 0.5vw;
+	
+	text-align: left;
+	color: #336;
+	font-size: 1.1em;
+	
+	background-color: #FFF;
+}
+
+.content_printer_status::after {
+	float: right;
+	width: 28%;
+	height: 25px;
+	
+	margin-right: 8px;
+		
+	color: #FFF;
+	text-align: center;
+	font-size: 0.8vw;
+	line-height: 25px;
+	font-weight: bold;
+}
+
+.content_printer_status_idle::after {
+	background-color: #063;
+	content: 'IDLE';
+}
+
+.content_printer_status_occupied::after {
+	background-color: #FF7519;
+	content: 'OCCUPIED';
+}
+
+.content_printer_status_printing::after {
+	background-color: #06C;
+	content: 'PRINTING';
+}

@@ -1,0 +1,38 @@
+
+#content_ram {
+	height: 536px;
+}
+
+#content_ram_header {
+	background-color: #75A3A3;
+}
+
+#content_ram_content {
+	text-align: left;
+	padding: 12px;
+}
+
+.content_ram_space {
+	/*height: 60px;*/
+	height: 5vw;
+	border: 1px solid #666;
+	padding: 0.5vw;
+	
+	text-align: left;
+	color: #336;
+	font-size: 1.1em;
+	
+	background-color: #FFF;
+}
+
+#content_ram_userspace {
+	margin-bottom: 10px;
+}
+
+#content_ram_reg {
+	margin-bottom: 10px;
+}
+
+#content_ram_kernelspace {
+	
+}

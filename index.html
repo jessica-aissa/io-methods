@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/jquery/theme.min.css" />
+    <link rel="stylesheet" href="css/jquery/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/jquery/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="scripts/jquery/jquery-1.11.1.min.js"></script>
+    <script src="scripts/jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/jquery/jquery-1.11.3.js"></script>
+
+	<link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/content/scheduler.css" />
+    <link rel="stylesheet" href="css/content/cpu.css" />
+    <link rel="stylesheet" href="css/content/process.css" />
+    <link rel="stylesheet" href="css/content/ram.css" />
+    <link rel="stylesheet" href="css/content/printer.css" />
+    <link rel="stylesheet" href="css/content/dma.css" />
+    <link rel="stylesheet" href="css/content/help.css" />
+    
+    <link rel="stylesheet" href="css/arrow.css" />
+    
+    
+</head>
+
+<body>
+    <div id="header">
+        I/O Methods
+    </div>
+
+	<div id="middle">
+    	
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" valign="top" class="nav" id="nav_left">
+            	<div class="nav_block_title" id="nav_block_method">I/O method:</div>
+                <div class="nav_block_content">
+                	<!-- NAV BUTTONS -->
+                    <div class="nav_method_button">
+                        <button id="btnMethod1" class="ui-btn ui-shadow ui-corner-all">Programmed</button>
+					</div>
+                    <div class="nav_method_button">
+                    	<button id="btnMethod2" class="ui-btn ui-shadow ui-corner-all">Interrupt-driven</button>
+                    </div>
+                    <div class="nav_method_button">
+						<button id="btnMethod3" class="ui-btn ui-shadow ui-corner-all">DMA</button>
+                    </div>
+                </div>
+                
+                <div class="nav_block_title" id="nav_block_control">Control:</div>
+                <div class="nav_block_content">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td colspan="3" align="center">
+                            <button name="btnStart" class="ui-btn ui-shadow ui-corner-all" id="btnStart">Start</button>
+                        </td>
+                      </tr>
+                      <tr>
+                      	<td colspan="3" align="center">
+                            <button name="btnStop" class="ui-btn ui-shadow ui-corner-all" style="margin: 0px" id="btnStop">Stop</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="33%" align="center" valign="top">
+                            <button name="btnBack" class="ui-btn ui-shadow ui-corner-all" id="btnBack" style="width: 97%; float: left;">
+                                <img src="img/carat-l-black.png">
+                            </button>
+                        </td>
+                        <td width="33%" align="center" valign="middle">
+						  <button id="btnRepeat" class="ui-btn ui-shadow ui-corner-all" style="width: 97%; float: left;">
+                                <img src="img/refresh-black.png">
+                            </button>
+                        </td>
+                        <td width="33%" align="center" valign="top">
+							<button id="btnForward" class="ui-btn ui-shadow ui-corner-all" style="width: 97%; float: left;">
+								<img src="img/carat-r-black.png">
+							</button>
+                        </td>
+                      </tr>
+                      <tr>
+                      	<td colspan="3" align="center">
+                            <button name="btnReload" class="ui-btn ui-shadow ui-corner-all" style="margin: 0px" id="btnReload">
+                            	Reload
+							</button>
+                        </td>
+                      </tr>
+                    </table>
+                </div>
+                                
+            </td>
+            <td align="center" valign="top" id="content">
+              <!-- CONTENT TABLE -->
+           	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="content_table">
+           	  	  <tr>
+           	  	  	<td width="100%" align="center" colspan="3">
+           	  	  	  <!-- CONTENT HEADER -->
+           	  	  	  <div id="intro_text">
+           	  	  	  		Please select an I/O Method from the navigation bar to the left.
+           	  	  	  </div>
+           	  	  	  <div class="content_header" id="content_header_method">
+           	  	  			Text
+           	  	  	  </div>
+           	  	  	</td>
+           	  	  </tr>
+                  <tr>
+                    <td width="33%" align="center" valign="top">
+                      <!-- SCHEDULER BLOCK -->
+                   	  <div class="content_block" id="content_scheduler">
+							<div class="content_block_header" id="content_scheduler_header">
+                            	Scheduler
+                            </div>
+                            <div class="content_block_content" id="content_scheduler_content">
+                            	<div class="content_process ui-shadow" id="content_process_1_sqd">
+                                    <div class="content_process_header">
+                                        <div class="content_process_text" id="process_1"></div>
+                                        <div class="content_process_status content_process_status_ready" id="content_process_1_sqd_status"></div>
+									</div>
+                                </div>
+                                <div class="content_process ui-shadow" id="content_process_2_sqd">
+                                	<div class="content_process_header">
+                                        <div class="content_process_text" id="process_2"></div>
+                                        <div class="content_process_status content_process_status_ready" id="content_process_2_sqd_status"></div>
+									</div>
+                                </div>
+                                <div class="content_process ui-shadow" id="content_process_3_sqd">
+                                    <div class="content_process_header">
+                                        <div class="content_process_text" id="process_3"></div>
+									</div>
+                                </div>
+                            </div>
+                      </div>
+                    </td>
+                    <td align="center" valign="top">
+                    	<!-- CPU BLOCK -->
+                    	<div class="content_block" id="content_cpu">
+							<div class="content_block_header" id="content_cpu_header">
+                            	CPU
+                            </div>
+                            <div class="content_block_content" id="content_cpu_content">
+                            	<div style="margin-top: 10px; font-size: 1.2vw; float: left; " id="content_cpu_text"></div>
+                            	<!-- PROCESS 1 (CPU) -->
+                            	<div class="content_process ui-shadow" id="content_process_1_cpu">
+	                                <div class="content_process_header">
+    	                            	<div class="content_process_text" id="process_1_cpu">Process 1</div>
+        	                            <div class="content_process_status content_process_status_running" id="process_status"></div>
+									</div>
+                                    <div class="content_process_instructions" id="process1_instructions">
+										<div class="content_process_intr content_process_intr1" id="process1_intr1"></div>
+                                      	<div class="content_process_intr content_process_intr2" id="process1_intr2"></div>
+                                      	<div class="content_process_intr content_process_intr3" id="process1_intr3"></div>
+                                      	<div class="content_process_intr content_process_intr4" id="process1_intr4"></div>
+                                        <div class="content_process_intr content_process_intr5" id="process1_intr5"></div>
+									</div>
+                                </div>
+                                <!-- PROCESS 2 (CPU) -->
+                                <div class="content_process ui-shadow" id="content_process_2_cpu">
+	                                <div class="content_process_header">
+    	                            	<div class="content_process_text" id="process_2_cpu">Process 2</div>
+        	                            <div class="content_process_status content_process_status_running"></div>
+									</div>
+                                    <div class="content_process_instructions">
+										<div class="content_process_intr content_process_intr1" id="process2_intr1">Instruction 1</div>
+                                      	<div class="content_process_intr content_process_intr2" id="process2_intr2">Instruction 2</div>
+                                      	<div class="content_process_intr content_process_intr3" id="process2_intr3">Instruction 3</div>
+                                      	<div class="content_process_intr content_process_intr4" id="process2_intr4">I/O request</div>
+                                        <div class="content_process_intr content_process_intr5" id="process2_intr5">Instruction 4</div>
+									</div>
+                                </div>
+                                <!-- INTERRUPTION (CPU) -->
+                                <div class="content_process ui-shadow" id="content_process_3_cpu">
+                                	<div class="content_process_header">
+                                		<div class="content_process_text" id="process_3_cpu">Interruption</div>
+									</div>
+									<div class="content_process_instructions" id="interrupt_instructions">
+										<div class="content_process_intr content_process_intr1" id="process3_intr1"></div>
+                                      	<div class="content_process_intr content_process_intr2" id="process3_intr2"></div>
+                                      	<div class="content_process_intr content_process_intr3" id="process3_intr3"></div>
+                                      	<div class="content_process_intr content_process_intr4" id="process3_intr4"></div>
+                                        <div class="content_process_intr content_process_intr5" id="process3_intr5"></div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="33%" align="center" valign="top" rowspan="5">
+                      <!-- RAM BLOCK -->
+					  <div class="content_block" id="content_ram">
+                            <div class="content_block_header" id="content_ram_header">
+                            	RAM
+                            </div>
+                            <div class="content_block_content" id="content_ram_content">
+                            	<div id="user_space"></div>
+                                <div class="content_ram_space" id="content_ram_userspace">
+                                	<div id="content_ram_string1"></div>
+                                	<div id="content_ram_string2"></div>
+                                </div>
+                                <div id="printer_reg"></div>
+                                <div class="content_ram_space" id="content_ram_reg">
+                                	
+                                </div>
+                                <div id="kernel_space"></div>
+                                <div class="content_ram_space" id="content_ram_kernelspace">
+                                	<div id="content_ram_string3">
+                                		
+                                	</div>
+                                </div>
+                            </div>
+					  </div>
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td rowspan="4" width="33%" valign="top" align="center">
+                  		<!-- HELP BLOCK -->
+                  		<div class="content_block" id="content_help">
+                  			<div class="content_block_header" id="content_help_header">
+                            	Step-by-step
+                            </div>
+                            <div class="content_block_content" style="height: 214px; overflow: scroll" id="content_help_content">
+                            	
+                            </div>
+                  		</div>
+                  	</td>
+                    <!--<td rowspan="4" align="right" valign="top">&nbsp;</td>-->
+                    <td align="center" valign="top">
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0" id="content_arrow_top">
+                          <tr>
+                          	<!-- TEXT 1 -->
+                            <td width="37%" align="center" valign="middle">
+                            	<div class="arrow_text" id="text_1"></div>
+                            </td>
+                            <td width="13%" align="right" valign="top">
+                            	<div class="arrowDown">
+                                    <div class="arrow_base arrow_vD" id="arrow_1v"></div>
+                                    <div class="arrow_base arrow_aD" id="arrow_1a"></div>
+                                </div>
+                            </td>
+                            <td width="13%" align="left" valign="top">
+                            	<div class="arrowUp">
+                                    <div class="arrow_base arrow_vD" id="arrow_2v"></div>
+                                    <div class="arrow_base arrow_aD" id="arrow_2a"></div>
+							  </div>
+                            </td>
+                            <!-- TEXT 2 -->
+                            <td width="37%" align="center" valign="middle">
+                            	<div class="arrow_text" id="text_2"></div>
+                            </td>
+                          </tr>
+                        </table>
+                    </td>
+                    <td rowspan="4" align="left" valign="top" >
+                    	<!-- asd --
+                    	<table width="100%" align="center">
+                    		<tr>
+                    			<td width="25%">
+                    				<div class="arrowLeft" style="float: left;" id="arrow_5">
+			                            <div class="arrow_base arrow_v"></div>
+			                            <div class="arrow_base arrow_h"></div>
+			                            <div class="arrow_base arrow_aR"></div>
+			                        </div>
+                    			</td>
+                    			<td valign="top">
+                    				<!-- TEXT 5 
+			                        <div class="content_block" valign="center">
+			                        	<div class="arrow_text" id="text_5">
+			                            	Text 5
+			                        	</div>
+			                        </div>
+                    			</td>
+                    		</tr>
+                    	</table>
+                    	-->
+                        <br clear="all">
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td align="center" valign="top">
+                  		<!-- DMA BLOCK -->              	
+                    	<div class="content_block" id="content_dma">
+                            <div class="content_block_header" id="content_dma_header">
+                                DMA
+                            </div>
+                            <div class="content_block_content" id="content_dma_content">
+                                
+                            </div>
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top" >
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0" id="content_arrow_bottom">
+                          <tr>
+                          	<!-- TEXT 3 -->
+                            <td width="37%" align="center" valign="middle">
+                            	<div class="arrow_text" id="text_3">
+                            		
+                            	</div>
+                            </td>
+                            <td width="13%" align="right" valign="top">
+                            	<div class="arrowDown">
+                                    <div class="arrow_base arrow_vD" id="arrow_3v"></div>
+                                    <div class="arrow_base arrow_aD" id="arrow_3a"></div>
+                                </div>
+                            </td>
+                            <td width="13%" align="left" valign="top">
+                            	<div class="arrowUp">
+                                    <div class="arrow_base arrow_vD" id="arrow_4v"></div>
+                                    <div class="arrow_base arrow_aD" id="arrow_4a"></div>
+							  </div>
+                            </td>
+                            <!-- TEXT 4 -->
+                            <td width="37%" align="center" valign="middle">
+                            	<div class="arrow_text" id="text_4">
+                            		
+                            	</div>
+                            </td>
+                          </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td align="center" valign="top" >                   	
+                    	<div class="content_block" id="content_printer">
+                            <div class="content_block_header" id="content_printer_header">
+                                <div class="content_printer_status content_printer_status_idle" id="printer_status"></div>
+                                <div id="content_printer_title">Printer</div>
+                            </div>
+                            <div class="content_block_content" id="content_printer_content">
+                            	Printed page:
+                                <div class="content_ram_space" id="content_printer_page">
+                                	
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                  </tr>
+                </table>
+
+            </td>
+            <td align="left" valign="top" class="nav" id="nav_right">
+           	  <div class="nav_block_title" id="time_lapse">Time lapse:</div>
+                <div class="nav_block_content">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="32" align="left" valign="middle" id="programmed_time_id">Programmed:</td>
+                        <td height="32" align="right" valign="middle" class="nav_timeLapse_time" id="programmed_time">0</td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="left" valign="middle" id="interrupt_time_id">Interrupt-driven:</td>
+                        <td height="32" align="right" valign="middle" class="nav_timeLapse_time" id="interrupt_time">0</td>
+                      </tr>
+                      <tr>
+                        <td height="32" align="left" valign="middle" id="dma_time_id">DMA:</td>
+                        <td height="32" align="right" valign="middle" class="nav_timeLapse_time" id="dma_time">0</td>
+                      </tr>
+                    </table>
+				</div>
+				<div class="nav_block_title" id="language">Language:</div>
+                <div class="nav_block_content">
+                	<div class="nav_method_button">
+                        <button id="btnLanguage1" class="ui-btn ui-shadow ui-corner-all">
+                        	<img src="img/pt-br.png" height="12%" width="12%"> Português<br>
+                        </button>
+					</div>
+					<div class="nav_method_button">
+                        <button id="btnLanguage2" class="ui-btn ui-shadow ui-corner-all">
+                        	<img src="img/en-uk.png" height="12%" width="12%"> English
+                        </button>
+					</div>
+                </div>
+                <div class="nav_block_title" id="nav_block_help">Help:</div>
+                <div class="nav_block_content" id="nav_block_help_content">
+                	&bull; Press <strong>Start</strong> to run the entire method.<br>
+                	&bull; Press <strong>Stop</strong> to stop running the entire method.<br>
+                	&bull; Press <strong>Back</strong> to go back a step.<br>
+                	&bull; Press <strong>Reload</strong> to reload the current step.<br>
+                	&bull; Press <strong>Next</strong> to go forward a step.<br>
+                </div>
+            </td>
+          </tr>
+        </table>
+	</div>
+
+    <div id="footer">
+    	ICMC - USP - São Carlos, SP<br>
+        Guilherme C. de Oliveira, Leonardo C. de P. e Silva, Jéssica  B. Aissa, Lucas T. Munhoz
+	</div>
+    
+    <!-- SCRIPTS -->
+    <script src="scripts/programmed.js"></script>
+    <script src="scripts/interruption.js"></script>
+    <script src="scripts/dma.js"></script>
+    <script src="scripts/process.js"></script>
+    <script src="scripts/strings.js"></script>
+    <script src="scripts/methods.js"></script>
+    <script src="scripts/main.js"></script>
+    
+</body>
+
+</html>

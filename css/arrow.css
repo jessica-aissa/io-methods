@@ -1,0 +1,91 @@
+.arrow_base {
+	background: #336;
+}
+
+.arrowRight {
+	width: 70px;
+	height: 120px;
+}
+
+.arrowLeft {
+	width: 70px;
+	height: 120px;
+	
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+.arrowDown {
+	width: 30px;
+	margin: 0 10px;
+	
+	-moz-transform: scale(0.8, 1);
+	-webkit-transform: scale(0.8, 1);
+	-o-transform: scale(0.8, 1);
+	-ms-transform: scale(0.8, 1);
+	transform: scale(0.8, 1);
+}
+
+.arrowUp {
+	width: 30px;
+	margin: 0 10px;
+	
+	-moz-transform: scale(0.8, -1);
+	-webkit-transform: scale(0.8, -1);
+	-o-transform: scale(0.8, -1);
+	-ms-transform: scale(0.8, -1);
+	transform: scale(0.8, -1);
+}
+
+.arrow_v {
+	float: left;
+	width: 30px;
+	height: 100px;
+	
+	border-radius: 25px 25px 0 25px;
+}
+
+.arrow_h {
+	float: left;
+	height: 30px;
+	width: 10px;
+	
+	margin-top: 70px;
+}
+
+.arrow_aR {
+	float: left;
+	background-color: transparent;
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	border-left: 25px solid #336;
+	
+	margin-top: 60px;
+}
+
+.arrow_vD {
+	width: 30px;
+	height: 10px;
+}
+
+.arrow_aD {
+	background-color: transparent;
+	width: 0;
+	height: 0;
+	border-right: 25px solid transparent;
+	border-left: 25px solid transparent;
+	border-top: 25px solid #336;
+	
+	margin-left: -10px;
+
+}
+
+.arrow_text {
+	font-size: 16px;
+	font-weight: bold;
+}

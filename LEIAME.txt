@@ -1,0 +1,21 @@
+1. Objetivos
+
+	Este REA (Recurso Educacional Aberto) consiste em um simulador de Entrada e Saída de um Sistema Operacional. Ele simula as três técnicas mais utilizadas: E/S Programada, Dirigida por Interrupção e por Acesso Direto à Memória (DMA). Buscou-se mostrar aspectos estruturais e funcionais de cada técnica além dos conceitos necessários para entendê-las por completo. Assim, é importante que o aluno fique atento a cada modificação ocorrida em cada uma das etapas dos processos.
+
+2. Requisitos do sistema
+
+	Durante a elaboração deste recurso educacional, pensou-se em qual seria a melhor maneira para produzi-lo, seja para a própria implementação do recurso como para distribuição, requisitos e instalação da ferramenta. Decidiu-se por fazê-lo para WEB, assim, a implementação não seria tão complicada, tendo em vista ferramentas como jQuery que auxiliam na animação, e para a distribuição e instalação é necessário apenas passar o link da página em que o REA está hospedado. O único requisito seria o navegador, entretanto, o Windows vem com o Internet Explorer, Linux com Mozilla Firefox e MAC com Safari, portanto, não há dificuldades nesse quesito.
+
+3. Ensinando com o REA
+
+	O REA para métodos de Entrada e Saída foi desenvolvido com enfoque no ensino. Por isso, seu menu é interativo e composto por visão geral do método e visão passo-a-passo.
+A visão geral é possibilitada pelo botão Start, que roda o método por completo de uma única vez, de forma fluida, animada e explicativa.
+A visão passo-a-passo se dá com o auxilio dos botões < e > que possibilitam passar o funcionamento do programa um passo de cada vez. Assim, após os alunos terem uma visão geral do método é possível analisá-lo em detalhes pausando a cada etapa. O texto explicativo abaixo da simulação não só ajuda os alunos mas também o monitor.
+
+4. Autores
+
+	Os autores são alunos do curso de Engenharia de Computação dos institutos ICMC (Instituto de Ciências Matemáticas e de Computação) e EESC (Escola de Engenharia de São Carlos) da USP (Universidade de São Paulo) em São Carlos.
+	Gulherme Caixeta de Oliveira 		
+	Jessica Bargas Aissa			
+	Leonardo Claudio de Paula e Silva 	
+	Lucas Tognoli Munhoz			
